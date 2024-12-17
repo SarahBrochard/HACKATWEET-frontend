@@ -1,11 +1,12 @@
 import '../styles/globals.css';
 import Head from 'next/head';
+import users from '../reducers/users'
 
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 
 const store = configureStore({
- reducer: { },
+ reducer: {users },
 });
 
 function App({ Component, pageProps }) {

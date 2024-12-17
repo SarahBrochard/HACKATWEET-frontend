@@ -5,6 +5,8 @@
   align-items: center;
   min-height: 100vh;
   padding: 4rem 0;
+  background: #17202a  ;
+  color: #fff;
 }
 
 .title {
@@ -19,4 +21,13 @@
 
 .title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
+}
+
+.input{
+  background-color: #fff
+  ;
+}
+
+.bttweet{
+background: #0070f3;
 }
