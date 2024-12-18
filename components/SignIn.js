@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import Link from "next/link";
+import styles from '../styles/SignIn.module.css';
+import Image from 'next/image'
+
 
 function SignIn() {
     const [signInUsername, setSignInUsername] = useState("");
@@ -15,16 +18,17 @@ function SignIn() {
                 console.log(data)
                 if(data.result) {
                     return(
-                        <Link href="/home"></Link>
+                        <Link href="./home"></Link>
                     )
                 }
             });
     };
 
     return (
-        <div>
-            <input onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername}>Username</input>
-            <input onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword}>Password</input>
+        <div className={styles.divSignIn}>
+            <Image src="/twitter.png" alt="logo" width="60px" height="60px" className={styles.logoTwitter}/>
+            <input onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} placeholder='Username'/>
+            <input onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} placeholder='Password'/>
             <button onClick={()=> auClickSurSignIn()}>SignIn</button>
         </div>
     )

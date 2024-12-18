@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';    
-    
+import Image from 'next/image'
+import styles from '../styles/SignUp.module.css';
     
 
 
@@ -22,10 +23,11 @@ function SignUp() {
             });
     };
     return (
-        <div>
-            <input onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname}>Firstname</input>
-            <input onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername}>Username</input>
-            <input onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword}>Password</input>
+        <div className={styles.divSignUp}>
+            <Image src="/twitter.png" alt="logo" height="60px" width="60px" className={styles.logoTwitter}/>
+            <input onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname} placeholder='Firstname'/>
+            <input onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} placeholder='Username'/>
+            <input onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} placeholder='Password'/>
             <button onClick={()=> auClickSurSignUp()}>SignUp</button>
         </div>
     )
