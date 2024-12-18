@@ -20,8 +20,13 @@
 .divDroite {
     width: 50%;
     height: 1000px;
-    background-color: pink;
+    background-color: lightblue;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white
     
 }
 
