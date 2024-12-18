@@ -8,13 +8,12 @@ import { Button, Modal } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from '../reducers/user';
 
-import {useRouter} from "next/router";
+import {useRouter} from "next/router"; //LE TRUC QUI PERMET DE REDIRIGER VERS LA PAGE HOME 
 
 
 function SignIn() {
     const [signInUsername, setSignInUsername] = useState("");
     const [signInPassword, setSignInPassword] = useState("");
-    // const [redirect, setRedirect] = useState(false);
 
     const dispatch = useDispatch();
 	const user = useSelector((state) => state.user.value);
@@ -31,7 +30,7 @@ function SignIn() {
                 console.log(data)
                 if(data.result) {
                     dispatch(login({ username: signInUsername, token: data.token }));
-                    setRedirect(true);
+                    
                     router.push("/home")
                 }
             });
@@ -42,9 +41,7 @@ function SignIn() {
             <Image src="/twitter.png" alt="logo" width="60px" height="60px" className={styles.logoTwitter}/>
             <input onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} placeholder='Username'/>
             <input onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} placeholder='Password'/>
-            {/* <button onClick={()=> auClickSurSignIn()}>SignIn</button> */}
             <Button onClick={()=> auClickSurSignIn()}>SignIn</Button>
-            {/* {redirect && <Link href="/home"> Go to Home </Link>} */}
         </div>
     )
 
