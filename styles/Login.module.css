@@ -1,0 +1,27 @@
+.divLogin {
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.logoTwitter {
+    transform: rotate(180deg);
+    color: white;
+
+
+}
+
+.divGauche {
+    width: 50%;
+    height: 1000px;
+}
+
+.divDroite {
+    width: 50%;
+    height: 1000px;
+    background-color: pink;
+    overflow: hidden;
+    
+}
+
