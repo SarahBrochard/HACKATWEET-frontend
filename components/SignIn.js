@@ -17,9 +17,7 @@ function SignIn() {
             .then(data => {
                 console.log(data)
                 if(data.result) {
-                    return(
-                        <Link href="./home"></Link>
-                    )
+
                 }
             });
     };
