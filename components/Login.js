@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { Button, Modal } from 'antd';
 
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from '../reducers/user';
+
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 
@@ -40,18 +43,24 @@ function Login() {
 
 return(
     <div className={styles.divLogin}>
-        <Image src="/twitter.png" alt="logo" width="60px" height="60px" className={styles.logoTwitter}/>
-        <h2>See what's happening</h2>
-        <h3>Join Hackatweet today.</h3>
-        <Button onClick={showModal}>Sign Up</Button>
-        <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-            <SignUp/>
-        </Modal>
-        <p>Already have an account ?</p>
-        <Button onClick={showModal1}>Sign In</Button>
-        <Modal open={isModalOpen1} onOk={handleOk1} onCancel={handleCancel1}>
-            <SignIn/>
-        </Modal>
+        <div className={styles.divGauche}>
+            <Image src="/ImageGauche.png" width="1000px" height="1000px" className={styles.imageGauche}></Image>
+        </div>
+        <div className={styles.divDroite}>
+            <Image src="/twitter.png" alt="logo" width="60px" height="60px" className={styles.logoTwitter}/>
+            <h2>See what's happening</h2>
+            <h3>Join Hackatweet today.</h3>
+            <Button onClick={showModal}>Sign Up</Button>
+            <Modal open={isModalOpen} footer={null} onCancel={handleOk}>
+                <SignUp/>
+            </Modal>
+            <p>Already have an account ?</p>
+            <Button onClick={showModal1}>Sign In</Button>
+            <Modal open={isModalOpen1} onOk={handleOk1} onCancel={handleCancel1}>
+                <SignIn/>
+            </Modal>
+        </div>
+
 
     </div>
 )
