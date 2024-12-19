@@ -1,11 +1,13 @@
 import styles from "../styles/Home.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
+import {login, logout} from "../reducers/user"
 
 function Tweet() {
   const [textTweet, setTextTweet] = useState("");
   const [listTweet, setListTweet] = useState([]);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
 
   const handleInputTweet = (event) => {
     setTextTweet(event.target.value);

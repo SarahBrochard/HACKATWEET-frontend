@@ -44,9 +44,12 @@ background: #0070f3;
 .logBt{
   color: #000;
   justify-content: flex-start
+  
 }
 
 .logoTw{
-  height: 50px;
-  width: 50px;
+    transform: rotate(180deg);
+  display: flex;
+  justify-content: flex-start;
+
 }

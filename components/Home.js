@@ -35,8 +35,9 @@ function Home() {
         <button id="logout" className={styles.logBt} onClick={() => handleLogout()} >
           Logout
         </button>
+        <div>  <LastTweets/> </div>
         </div>
-        <div className={styles.logoTw} ><img src="Twiblanc.webp"  /></div>
+        <div className={styles.logoTw} > <img src="twitter.png" alt="toLogin" width="60px" height="60px"  /></div>
       </main>
       
     </div>
