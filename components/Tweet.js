@@ -36,6 +36,7 @@ function Tweet() {
         maxLength="280"
         value={textTweet}
       />
+      <span> {textTweet.length}/280 </span>
 
       <button
         id="addTweet"

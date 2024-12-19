@@ -56,7 +56,7 @@ return(
             </Modal>
             <p>Already have an account ?</p>
             <Button onClick={showModal1}>Sign In</Button>
-            <Modal open={isModalOpen1} onOk={handleOk1} onCancel={handleCancel1}>
+            <Modal open={isModalOpen1} footer={null} onCancel={handleOk1} >
                 <SignIn/>
             </Modal>
         </div>
