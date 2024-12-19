@@ -10,7 +10,9 @@
 }
 .menuleft{
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
+  
 }
 
 
@@ -36,8 +38,10 @@
 
 .bttweet{
 background: #0070f3;
+
 }
 
 .logBt{
-  color: #fff;
+  color: #000;
+  justify-content: flex-start
 }
