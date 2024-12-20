@@ -5,7 +5,7 @@ import {login, logout} from "../reducers/user"
 
 function Tweet() {
   const [textTweet, setTextTweet] = useState("");
-  const [listTweet, setListTweet] = useState([]);
+  
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
 

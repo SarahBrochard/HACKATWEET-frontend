@@ -5,40 +5,52 @@ import Head from "next/head";
 import LastTweets from "./LastTweets";
 import Tweet from "./Tweet";
 import Trend from "./Trend";
-import {login, logout} from "../reducers/user"
-import { useRouter } from 'next/router'
-
+import { login, logout } from "../reducers/user";
+import { useRouter } from "next/router";
 
 function Home() {
   const user = useSelector((state) => state.user.value);
-  const router = useRouter()
+  const router = useRouter();
 
-  if(!user.token) {
-    router.push("/login")
-}
+  if (!user.token) {
+    router.push("/login");
+  }
 
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-      dispatch(logout());
-      
-      
-    };
-
+    dispatch(logout());
+  };
 
   return (
-    <div>
-      <main className={styles.main}>
-        <h1 className={styles.title}> HOME </h1>
-        <Tweet />
-        <div className={styles.menuleft}>
-        <button id="logout" className={styles.logBt} onClick={() => handleLogout()} >
-          Logout
-        </button>
-        <div>  <LastTweets/> </div>
+    <div id="home" className={styles.main}>
+      
+      <div id="left" className={styles.menuleft}>
+          <img
+            src="twitter.png"
+            alt="toLogin"
+            width="60px"
+            height="60px"
+            className={styles.logoTw}
+          />
+
+          <button
+            id="logout"
+            className={styles.logBt}
+            onClick={() => handleLogout()}
+          >
+            Logout
+          </button>
         </div>
-        <div className={styles.logoTw} > <img src="twitter.png" alt="toLogin" width="60px" height="60px"  /></div>
-      </main>
+        <div id="centre" className={styles.menucentre}>
+          <h1 > HOME </h1>
+          <Tweet />
+
+          <LastTweets />
+        </div>
+        
+        <div id="right" className={styles.menuright}>Trends</div>
+         <Trend/>
       
     </div>
   );
