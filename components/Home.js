@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Head from 'next/head';
 import LastTweets from './LastTweets';
 import Tweet from './Tweet';
-import Trend from './Trend';
+import Trend from './Trends';
 
 
 function Home() {
