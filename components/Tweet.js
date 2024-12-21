@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
 import {login, logout} from "../reducers/user"
+import { newTweet } from "../reducers/tweet";
 
 function Tweet() {
   const [textTweet, setTextTweet] = useState("");
@@ -19,10 +20,12 @@ function Tweet() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         text: textTweet,
+        username : user.username
       }),
     })
       .then((response) => response.json())
       .then((data) => {
+        dispatch(newTweet({username: data.username, text: textTweet}))
         setTextTweet('');
       });
   };
