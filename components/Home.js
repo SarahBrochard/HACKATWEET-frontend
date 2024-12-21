@@ -5,6 +5,7 @@ import Head from 'next/head';
 import LastTweets from './LastTweets';
 import Tweet from './Tweet';
 import Trend from './Trend';
+import { useRouter } from 'next/router';
 
 
 function Home() {
