@@ -10,26 +10,27 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 const reducers = combineReducers({ user });
 
+
 const persistConfig = { key: 'hackatweet', storage };
 
 const store = configureStore({
-reducer: persistReducer(persistConfig, reducers),
-middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+  reducer: persistReducer(persistConfig, reducers),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
 });
 
 const persistor = persistStore(store);
 
 function App({ Component, pageProps }) {
-return (
-<Provider store={store}>
-<PersistGate persistor={persistor}>
-<Head>
-<title>Hackatweet</title>
-</Head>
-<Component {...pageProps} />
-</PersistGate>
-</Provider>
-);
+  return (
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Head>
+          <title>Hackatweet</title>
+        </Head>
+        <Component {...pageProps} />
+      </PersistGate>
+    </Provider>
+  );
 }
 
 export default App;
