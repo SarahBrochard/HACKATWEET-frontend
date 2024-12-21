@@ -12,13 +12,18 @@ useEffect(() =>{
     fetch("http://localhost:3000/tweets/lastTweets")
     .then((response) => response.json())
     .then((data) => {
-        setListTweet(data.message)
+        setListTweet(data.message, data.username)
     });
 }, []);
  
+useEffect(() => {
+    if (tweet) {
+      setListTweet((listTweet) => [tweet, ...listTweet]);
+    }
+  }, [tweet]);
 
 const liste = listTweet.map((tweet, i) =>(
-    <li key={i} >{tweet.text}</li>
+    <li key={i} >{tweet.text} {tweet.username}</li>
 ))
 
 //Pour pouvoir effacer uniquement son tweet
