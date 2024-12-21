@@ -53,7 +53,7 @@ function Trendss() {
         <div>
             <h2>Trendss</h2>
             {jeTest2}
-            <p> Faut encore que je trouve comment afficher le nombre de fois que les hashtag ont été utilisés</p>
+            <p> Y'a une escroquerie, c'est pas vraiment le nombre de # qui est affiché mdr</p>
             {/* {oui} */}
         </div>
         

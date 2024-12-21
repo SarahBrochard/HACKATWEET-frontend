@@ -31,9 +31,9 @@ function Hashtag() {
         dispatch(logout());
     }
 
-    // if(!user.token) {
-    //     router.push("/login")
-    // }
+    if(!user.token) {
+        router.push("/login")
+    }
 
     useEffect(()=> {
         fetch('http://localhost:3000/tweets/lastTweets') 
