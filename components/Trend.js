@@ -15,7 +15,10 @@ useEffect(() =>{
     });
 }, []);
 
+
 console.log(listTrend)
+
+
 
 //Resultat null voir le contenu de base?
 

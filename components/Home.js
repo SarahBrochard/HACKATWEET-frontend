@@ -1,12 +1,11 @@
-import styles from "../styles/Home.module.css";
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Head from "next/head";
-import LastTweets from "./LastTweets";
-import Tweet from "./Tweet";
-import Trend from "./Trend";
-import { login, logout } from "../reducers/user";
-import { useRouter } from "next/router";
+import styles from '../styles/Home.module.css';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Head from 'next/head';
+import LastTweets from './LastTweets';
+import Tweet from './Tweet';
+import Trend from './Trend';
+
 
 function Home() {
   const user = useSelector((state) => state.user.value);
