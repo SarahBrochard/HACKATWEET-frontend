@@ -40,7 +40,7 @@ function SignIn() {
         <div className={styles.divSignIn}>
             <Image src="/twitter.png" alt="logo" width="60px" height="60px" className={styles.logoTwitter}/>
             <input onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} placeholder='Username'/>
-            <input onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} placeholder='Password'/>
+            <input onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} placeholder='Password' type="password"/>
             <Button onClick={()=> auClickSurSignIn()}>SignIn</Button>
         </div>
     )

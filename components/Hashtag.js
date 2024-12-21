@@ -40,13 +40,26 @@ function Hashtag() {
         .then(response => response.json())
         .then(data => {
             setTweets(data.message); //L'ERREUR VENAIT D'ICI J'avais mis seulement data au lieu de data.message
-            console.log(tweets);
         })
     }, []) 
 
+    console.log(tweets);
+
+    // const jeTest10 = tweets.hashtags;
+
+    // let jeTest9;
+    //     jeTest9 =
+    //     <div className={styles.div4}>
+    //     <p>Les tweets sont censés s'afficher là :</p>
+    //     {tweets.hashtags.map((tweet, index) => (
+    //         <div key={index} className={styles.tweet}>
+
+    //         </div>
+    //     ))}
+    //     </div>
 
     useEffect(()=> {
-        const filtre = tweets.filter(e => e.hashtag === hashtagInput)
+        const filtre = tweets.filter(e => e.hashtags === hashtagInput)
         setTweetsFiltres(filtre);
     }, [hashtagInput])
 
@@ -57,7 +70,7 @@ function Hashtag() {
         {tweetsFiltres.map((tweet, index) => (
             <div key={index} className={styles.tweet}>
             <p>{tweet.userId}</p>
-            <p><strong>{tweet.hashtag}</strong></p>
+            <p><strong>{tweet.hashtags}</strong></p>
             <p>{tweet.text}</p>
             <p>{tweet.timing}</p>
             <p>{tweet.likes.length} likes</p>
@@ -65,45 +78,6 @@ function Hashtag() {
         ))}
         </div>
 
-
-
-// let jeTest;
-//      jeTest =
-//     <div className={styles.div4}>
-//       <p>Les tweets sont censés s'afficher là :</p>
-//       {auPif.map((tweet, index) => (
-//         <div key={index} className={styles.tweet}>
-//           <p><strong>{tweet.hashtag}</strong></p>
-//           <p>{tweet.text}</p>
-//           <p>{tweet.timing}</p>
-//           <p>{tweet.likes} likes</p>
-//         </div>
-//       ))}
-//     </div>
-
-// useEffect(()=> {
-//     fetch("http://localhost:3000/hashtags/all")
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data)
-//         setHashtagEnregistres(data.message)
-//     })
-// }, [])
-
-// console.log(hashtagEnregistres);
-
-    // const auPif = tweets.map(auPif1 => ({text: auPif1.text, timing: auPif1.timing, likes: auPif1.likes.length, hashtag: auPif1.hashtag}))
-    // console.log(auPif)
-    //On a pu recup text, timing, likes.length et hashtag des tweets
-    
-    // useEffect(()=> {
-    //     if(hashtagInput) {
-    //     const filtre = tweets.filter(e => e.hashtag === hashtagInput)
-    //     setTweetsFiltres(filtre);
-    //     } else {
-    //         setTweetsFiltres([])
-    //     }
-    // }, [hashtagInput, tweets]);
 
 
   return (
