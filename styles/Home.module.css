@@ -1,43 +1,59 @@
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  align-items: center;
+  flex-direction: row;
+  justify-content:space-between;
   height: 100vh;
-  padding: 0;
   background: #17202a  ;
   color: #fff;
+  padding: 10px;
+  @font-face {
+    font-family: Mont-Heavy;
+    src: local("Mont-HeavyDEMO.otf");
+  }
+  };
+ 
+
+ .menuleft{
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 20%;
 }
-.menuleft{
-  display: flex;
+
+.menucentre{
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 50%;
+  }
+
+
+.menuright{
   justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  width: 30%;
+ 
 }
 
-
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
-  margin-top: 1rem;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
-}
 
 .input{
-  background-color: #fff
-  ;
+  background-color: #fff;
+  
 }
 
 .bttweet{
 background: #0070f3;
+
 }
 
 .logBt{
-  color: #fff;
+  color: #000;
+    
+}
+
+.logoTw{
+    transform: rotate(180deg);
+  
 }
